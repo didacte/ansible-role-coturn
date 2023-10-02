@@ -21,6 +21,11 @@
       append: true
     when: coturn_tls_group is defined
 
+  - name: Install acl package
+    package:
+      name: acl
+      state: present
+
   - name: Get file info of TLS Folder
     stat:
       path: "{{ coturn_tls_cert_dir }}"
